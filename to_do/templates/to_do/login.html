@@ -1,0 +1,15 @@
+{% extends 'to_do/main.html' %}
+{% block content %}
+<div class="header-bar">
+        <h2>Login Page</h2>
+</div>
+<div class="card-body">
+        <form method="POST"> 
+
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="button" type="submit" value="login">
+        </form>
+        <a href="{% url 'register' %}">Don't have an account?register here</a>
+</div>
+{% endblock content %}

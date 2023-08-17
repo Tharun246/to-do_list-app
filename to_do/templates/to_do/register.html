@@ -1,0 +1,24 @@
+
+{% extends 'to_do/main.html' %}
+{% block content %}<!DOCTYPE html>
+<div class="header-bar">
+        <h2>Registration Page</h2>
+</div>
+<div class="card-body">
+        <form method="POST"> 
+
+            {% csrf_token %}
+            <label>{{form.username.label}}</label>
+            {{form.username}}
+
+            <label>{{form.password1.label}}</label>
+            {{form.password1}}
+
+            <label>{{form.password2.label}}</label>
+            {{form.password2}}<br>
+
+            <input style="margin-top:10px;" class="button" type="submit" value="register">
+        </form>
+        <a href="{% url 'login' %}">already have an accout ? login</a>
+</div>
+{% endblock content %}
